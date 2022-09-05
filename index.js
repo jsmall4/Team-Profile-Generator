@@ -2,7 +2,8 @@ const manager = require("./library/manager");
 const engineer = require("./library/engineer");
 const intern = require("./library/intern");
 
-const inquirer = require("inquirer");
+const { prompt } = require("inquirer");
+const util = require("util");
 
 const markUpGenerator = require("./utils/markUpGenerator");
 fs = require("fs");
