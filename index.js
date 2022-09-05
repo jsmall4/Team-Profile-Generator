@@ -1,6 +1,6 @@
-const manager = require("");
-const engineer = require("");
-const intern = require("");
+const manager = require("./library/manager");
+const engineer = require("./library/engineer");
+const intern = require("./library/intern");
 
 const inquirer = require("inquirer");
 
@@ -39,3 +39,17 @@ const questions = [
     message: "What is your team member's office number?",
   },
 ];
+
+function writeToFile(fileName, data) {
+  fs.writeFile(fileName, generateMarkdown(data), (err) =>
+    err ? console.log(err) : console.log("Success!")
+  );
+}
+
+function init() {
+  prompt(questions).then((response) => {
+    writeToFile("team.html", response);
+  });
+}
+
+init();
