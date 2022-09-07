@@ -1,6 +1,6 @@
-const manager = require("./lib/manager");
-const engineer = require("./lib/engineer");
-const intern = require("./lib/intern");
+const manager = require("./lib/Manager");
+const engineer = require("./lib/Engineer");
+const intern = require("./lib/Intern");
 
 const { prompt } = require("inquirer");
 const util = require("util");
@@ -40,6 +40,11 @@ const questions = [
     message: "What is your team member's office number?",
   },
 ];
+
+createEmployee();
+createEngineer();
+createIntern();
+createManager();
 
 function writeToFile(fileName, data) {
   fs.writeFile(fileName, generateMarkdown(data), (err) =>
