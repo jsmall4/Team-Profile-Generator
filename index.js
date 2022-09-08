@@ -1,9 +1,9 @@
-const manager = require("./lib/Manager");
-const engineer = require("./lib/Engineer");
-const intern = require("./lib/Intern");
+const Manager = require("./lib/Manager");
+// const Engineer = require("./lib/Engineer");
+// const Intern = require("./lib/Intern");
+const Employee = require("./lib/Employee");
 
 const { prompt } = require("inquirer");
-const utils = require("utils");
 
 const markUpGenerator = require("./utils/markUpGenerator");
 fs = require("fs");
@@ -30,7 +30,7 @@ const questions = [
   },
   {
     type: "input",
-    name: "ID",
+    name: "id",
     message: "Enter the team member's Staff ID:",
   },
 
@@ -39,12 +39,25 @@ const questions = [
     name: "office",
     message: "What is your team member's office number?",
   },
+
+  {
+    type: "input",
+    name: "school",
+    message: "What is your school?",
+  },
 ];
 
-createEmployee();
-createEngineer();
-createIntern();
-createManager();
+const menuQuestion = {
+  type: "list",
+  message: "What would you like to do next?",
+  name: "menu",
+  choices: ["add in intern", "add in engineer", "finish"]
+};
+
+// createEmployee();
+// createEngineer();
+// createIntern();
+// createManager();
 
 function writeToFile(fileName, data) {
   fs.writeFile(`./dist/index.html`, generateMarkdown(data), (err) =>
@@ -52,10 +65,35 @@ function writeToFile(fileName, data) {
   );
 }
 
-function init() {
+function promptEmployee() {
   prompt(questions).then((response) => {
-    writeToFile("index.html", response);
+    console.log(response);
+    promptMenu() 
+
+  
+    // writeToFile("index.html", response);
   });
+
 }
 
-init();
+function promptMenu() {
+  prompt(menuQuestion).then(answer => {
+    console.log(answer)
+    if (answer.menu != "finish") {
+      promptEmployee()
+
+    }
+    else writeToFile()
+  })
+}
+
+promptEmployee();
+
+// const employee1 = new Employee("Jack", "1234", "jsmallwood@email.com");
+// const employee2 = new Employee("Bob", "1235", "bsmallwood@email.com");
+// const employee3 = new Manager("Sean", "1236", "snew@email.com", "5");
+
+// console.log(employee1.name);
+// console.log(employee1.getName());
+// console.log(employee2.getRole());
+// console.log(employee3.getRole());
