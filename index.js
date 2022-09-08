@@ -3,7 +3,7 @@ const engineer = require("./lib/Engineer");
 const intern = require("./lib/Intern");
 
 const { prompt } = require("inquirer");
-const util = require("util");
+const utils = require("utils");
 
 const markUpGenerator = require("./utils/markUpGenerator");
 fs = require("fs");
@@ -47,14 +47,14 @@ createIntern();
 createManager();
 
 function writeToFile(fileName, data) {
-  fs.writeFile(fileName, generateMarkdown(data), (err) =>
+  fs.writeFile(`./dist/index.html`, generateMarkdown(data), (err) =>
     err ? console.log(err) : console.log("Success!")
   );
 }
 
 function init() {
   prompt(questions).then((response) => {
-    writeToFile("team.html", response);
+    writeToFile("index.html", response);
   });
 }
 
