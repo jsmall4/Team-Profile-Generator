@@ -25,7 +25,7 @@ ${people
       <p class="card-text text-center"><i class="bi bi-building"></i> ${person.getRole()}</p>
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item text-center">ID: ${person.getId()}</li>
+      <li class="list-group-item text-center">ID: ${person.getID()}</li>
       <li class="list-group-item text-center">Email: <a href="mailto:${person.getEmail()}">${person.getEmail()}</a></li>
       <li class="list-group-item text-center">Office Number: ${
         person.office
@@ -42,7 +42,7 @@ ${people
         <p class="card-text text-center"><i class="bi bi-tools"></i> ${person.getRole()}</p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item text-center">ID: ${person.getId()}</li>
+        <li class="list-group-item text-center">ID: ${person.getID()}</li>
         <li class="list-group-item text-center">Email: <a href="mailto:${person.getEmail()}">${person.getEmail()}</a></li>
         <li class="list-group-item text-center">GitHub: <a href="https://github.com/${
           person.github
@@ -59,7 +59,7 @@ ${people
         <p class="card-text text-center"><i class="bi bi-person-circle"></i> ${person.getRole()}</p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item text-center">ID: ${person.getId()}</li>
+        <li class="list-group-item text-center">ID: ${person.getID()}</li>
         <li class="list-group-item text-center">Email: <a href="mailto:${person.getEmail()}">${person.getEmail()}</a></li>
         <li class="list-group-item text-center">School: ${person.getSchool()}</li>
       </ul>
