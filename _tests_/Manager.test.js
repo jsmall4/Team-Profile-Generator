@@ -10,7 +10,7 @@ it("creates the users Office Number", () => {
   };
   const manager = new Manager(data);
 
-  expect(manager.office).toEqual(data.Number);
+  expect(manager.office).toEqual(expect.any(Number));
 });
 
 it("creates a return of the the managers occupation", () => {
