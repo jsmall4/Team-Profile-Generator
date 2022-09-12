@@ -6,8 +6,10 @@ An command line prompt tool using npm inquirer to actively create a back end ser
 
 # Installation and Use:
 
-npm i
-node index
+npm i,
+
+node index,
+
 (follow prompts)
 
 # Contribution:
