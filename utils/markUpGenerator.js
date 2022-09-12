@@ -27,9 +27,7 @@ ${people
     <ul class="list-group list-group-flush">
       <li class="list-group-item text-center">ID: ${person.getID()}</li>
       <li class="list-group-item text-center">Email: <a href="mailto:${person.getEmail()}">${person.getEmail()}</a></li>
-      <li class="list-group-item text-center">Office Number: ${
-        person.office
-      }</li>
+      <li class="list-group-item text-center">Office Number: ${person.getOffice()}</li>
     </ul>
   </div>`;
   })}
