@@ -9,23 +9,25 @@ const prompts = require("./utils/prompts");
 fs = require("fs");
 
 prompts().then((teamData) => {
+  console.log("teamData", teamData);
   let people = [];
   teamData.forEach((element) => {
     switch (element.occupation) {
       case "Manager":
+        console.log("managerElement", element);
         const manager = new Manager(element);
         people.push(manager);
-        return;
+        break;
       case "Engineer":
         const engineer = new Engineer(element);
         people.push(engineer);
-        return;
+        break;
       case "Intern":
         const intern = new Intern(element);
         people.push(intern);
-        return;
+        break;
     }
-    console.log(people);
+    console.log("people", people);
   });
   fs.writeFile(`./dist/index.html`, markUpGenerator(people), (err) => {
     if (err) {

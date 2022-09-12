@@ -1,5 +1,6 @@
 function markUpGenerator(people) {
   // return a HTML file
+  console.log('people at generator', people);
   return `
   <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +20,8 @@ function markUpGenerator(people) {
 ${people
   .filter(({ occupation }) => occupation === "Manager")
   .map((person) => {
+    console.log('person')
+    console.log(person);
     return `<div class="card" style="width: 18rem;">
     <div class="card-body bg-success bg-opacity-25">
       <h5 class="card-title text-center">${person.getName()}</h5>
