@@ -24,6 +24,8 @@ https://github.com/jsmall4/Team-Profile-Generator
 
 # Videos:
 
+https://drive.google.com/file/d/1Avw68_T3acFPAirITsocmPA87jS13vSY/view
+
 # License
 
 MIT License
